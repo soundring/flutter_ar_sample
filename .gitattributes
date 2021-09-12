@@ -48,7 +48,6 @@ ios/UnityLibrary filter=lfs diff=lfs merge=lfs -text
 ios/UnityLibrary/Frameworks/com.ptc.vuforia.engine/Vuforia/Plugins/iOS/VuforiaEngine.framework/VuforiaEngine[[:space:]] filter=lfs diff=lfs merge=lfs -text
 *.gitignore filter=lfs diff=lfs merge=lfs -text
 *.metadata filter=lfs diff=lfs merge=lfs -text
-*.md filter=lfs diff=lfs merge=lfs -text
 *.gradle filter=lfs diff=lfs merge=lfs -text
 *.xml filter=lfs diff=lfs merge=lfs -text
 *.kt filter=lfs diff=lfs merge=lfs -text
@@ -90,7 +89,6 @@ ios/UnityLibrary/Frameworks/com.ptc.vuforia.engine/Vuforia/Plugins/iOS/VuforiaEn
 *.xcbuild filter=lfs diff=lfs merge=lfs -text
 *.txt filter=lfs diff=lfs merge=lfs -text
 /ios/build/XCBuildData/BuildDescriptionCacheIndex-e494a90b36383d738ae4486d87bbfd02 filter=lfs diff=lfs merge=lfs -text
-*.dart filter=lfs diff=lfs merge=lfs -text
 *.yaml filter=lfs diff=lfs merge=lfs -text
 *.cs filter=lfs diff=lfs merge=lfs -text
 *.asmdef filter=lfs diff=lfs merge=lfs -text

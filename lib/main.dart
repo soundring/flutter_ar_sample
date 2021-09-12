@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1ff5a4285c9df950be0f8e1e99b90faa815aa487f61adf2c20a2bfde2b4e9c5a
-size 1017
+import 'package:flutter/material.dart';
+
+import 'ar_page.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter AR'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'ARアプリのサンプル',
+            ),
+            ElevatedButton(
+              child: Text('AR画面へ'),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => ArPage()));
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
