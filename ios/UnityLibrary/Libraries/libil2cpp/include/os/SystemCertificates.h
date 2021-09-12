@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6cf98dfe56fb28bdd0ca42ffe1729fa9880b2088b1e5c592839d33cb1411f06
-size 554
+#pragma once
+
+#include <stdint.h>
+
+namespace il2cpp
+{
+namespace os
+{
+    typedef enum
+    {
+        DATATYPE_STRING = 0,
+        DATATYPE_INTPTR = 1,
+        DATATYPE_FILE = 2
+    } CertDataFormat;
+
+    typedef struct
+    {
+        void* certdata;
+        int certsize;
+    } CertObj;
+
+    class SystemCertificates
+    {
+    public:
+        static void* OpenSystemRootStore();
+        static int EnumSystemCertificates(void* certStore, void** iter, int *format, int* size, void** data);
+        static void CloseSystemRootStore(void* cStore);
+    };
+}
+}

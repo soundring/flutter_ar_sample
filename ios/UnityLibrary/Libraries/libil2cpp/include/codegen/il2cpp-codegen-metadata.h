@@ -1,3 +1,51 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:22d9f2ed2acbdc8c009660f9c5babe9b883e9be6c4d51b4a65a682280d1bad1b
-size 1316
+#pragma once
+
+typedef struct String_t String_t;
+struct Type_t;
+struct Exception_t;
+struct StringBuilder_t;
+struct MulticastDelegate_t;
+struct MethodBase_t;
+struct Assembly_t;
+
+#include "il2cpp-class-internals.h"
+
+#if RUNTIME_MONO
+IL2CPP_EXTERN_C_BEGIN
+#include <mono/metadata/class.h>
+#include <mono/metadata/image.h>
+#include <mono/metadata/metadata.h>
+#include <mono/metadata/object.h>
+#include <mono/metadata/object-internals.h>
+IL2CPP_EXTERN_C_END
+
+typedef MonoClass RuntimeClass;
+typedef MonoMethod RuntimeMethod;
+typedef MonoClassField RuntimeField;
+typedef MonoType RuntimeType;
+typedef MonoObject RuntimeObject;
+typedef MonoImage RuntimeImage;
+typedef MonoException RuntimeException;
+typedef MonoArray RuntimeArray;
+typedef MonoAssembly RuntimeAssembly;
+typedef MonoString RuntimeString;
+typedef MonoDelegate RuntimeDelegate;
+
+#else
+
+struct TypeInfo;
+struct MethodInfo;
+struct FieldInfo;
+struct Il2CppType;
+typedef Il2CppClass RuntimeClass;
+typedef MethodInfo RuntimeMethod;
+typedef FieldInfo RuntimeField;
+typedef Il2CppType RuntimeType;
+typedef Il2CppObject RuntimeObject;
+typedef Il2CppImage RuntimeImage;
+typedef Il2CppException RuntimeException;
+typedef Il2CppArray RuntimeArray;
+typedef Il2CppAssembly RuntimeAssembly;
+typedef Il2CppString RuntimeString;
+typedef Il2CppDelegate RuntimeDelegate;
+#endif

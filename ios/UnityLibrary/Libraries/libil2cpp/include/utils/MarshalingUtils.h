@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d987c11dbc35a9410db39d3b393c4ec7465492804394a7a98647fef27cfe661
-size 567
+#pragma once
+
+#include "il2cpp-config.h"
+
+struct Il2CppInteropData;
+
+namespace il2cpp
+{
+namespace utils
+{
+    class MarshalingUtils
+    {
+    public:
+        static void MarshalStructToNative(void* managedStructure, void* marshaledStructure, const Il2CppInteropData* interopData);
+        static void MarshalStructFromNative(void* marshaledStructure, void* managedStructure, const Il2CppInteropData* interopData);
+        static bool MarshalFreeStruct(void* marshaledStructure, const Il2CppInteropData* interopData);
+    };
+} // namespace utils
+} // namespace il2cpp

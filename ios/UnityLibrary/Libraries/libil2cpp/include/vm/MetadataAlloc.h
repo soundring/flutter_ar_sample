@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ffbae3c23d9a183fe705d36c3707d74fb36928667b3f4ef220ade9e31043261e
-size 591
+#pragma once
+
+#include "il2cpp-config.h"
+struct Il2CppGenericClass;
+struct Il2CppGenericMethod;
+
+namespace il2cpp
+{
+namespace vm
+{
+    void MetadataAllocInitialize();
+    void MetadataAllocCleanup();
+// These allocators assume the g_MetadataLock lock is held
+    void* MetadataMalloc(size_t size);
+    void* MetadataCalloc(size_t count, size_t size);
+// These metadata structures have their own locks, since they do lightweight initialization
+    Il2CppGenericClass* MetadataAllocGenericClass();
+    Il2CppGenericMethod* MetadataAllocGenericMethod();
+} // namespace vm
+} // namespace il2cpp

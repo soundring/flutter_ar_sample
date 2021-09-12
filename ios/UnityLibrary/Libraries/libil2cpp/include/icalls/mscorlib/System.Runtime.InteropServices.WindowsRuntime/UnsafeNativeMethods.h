@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9c8ccd9f73564a6cdc47b455b13c781bda529498e5332c3b03d0f4c3d69c45e3
-size 951
+#pragma once
+
+#include "il2cpp-object-internals.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Runtime
+{
+namespace InteropServices
+{
+namespace WindowsRuntime
+{
+    class LIBIL2CPP_CODEGEN_API UnsafeNativeMethods
+    {
+    public:
+        static bool RoOriginateLanguageException(int32_t error, Il2CppString* message, intptr_t languageException);
+        static Il2CppChar* WindowsGetStringRawBuffer(intptr_t hstring, uint32_t* length);
+        static int32_t WindowsCreateString(Il2CppString* sourceString, int32_t length, intptr_t* hstring);
+        static int32_t WindowsDeleteString(intptr_t hstring);
+        static Il2CppObject* GetRestrictedErrorInfo();
+        static void RoReportUnhandledError(Il2CppObject* error);
+    };
+} // namespace WindowsRuntime
+} // namespace InteropServices
+} // namespace Runtime
+} // namespace System
+} // namespace mscorlib
+} // namespace icalls
+} // namespace il2cpp

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eacfc3f450ebde83c0a5c583bdee99e7affd4f735ab515485f326e62e7b61b77
-size 332
+#pragma once
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+    class LIBIL2CPP_CODEGEN_API MissingMemberException
+    {
+    public:
+        static Il2CppString* FormatSignature(Il2CppArray* signature);
+    };
+} // namespace System
+} // namespace mscorlib
+} // namespace icalls
+} // namespace il2cpp

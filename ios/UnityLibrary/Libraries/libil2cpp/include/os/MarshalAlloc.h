@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5c2c2a97c66eb3b0a38fb8b6b3669ee298fe1d9cac52469452167dcd5214206d
-size 432
+#pragma once
+
+namespace il2cpp
+{
+namespace os
+{
+    class MarshalAlloc
+    {
+    public:
+        static void* Allocate(size_t size);
+        static void* ReAlloc(void* ptr, size_t size);
+        static void Free(void* ptr);
+        static void* AllocateHGlobal(size_t size);
+        static void* ReAllocHGlobal(void* ptr, size_t size);
+        static void FreeHGlobal(void* ptr);
+    };
+} /* namespace os */
+} /* namespace il2cpp*/

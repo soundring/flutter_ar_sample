@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3cb56bcf5c793114cab054a8b58a90afd54f76f87eb89c5a04f125370bfcaf1f
-size 802
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+#include "il2cpp-object-internals.h"
+
+struct Il2CppObject;
+struct Il2CppDelegate;
+struct Il2CppReflectionType;
+struct Il2CppReflectionMethod;
+struct Il2CppReflectionField;
+struct Il2CppArray;
+struct Il2CppException;
+struct Il2CppReflectionModule;
+struct Il2CppAssembly;
+struct Il2CppAssemblyName;
+struct Il2CppAppDomain;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Reflection
+{
+    class LIBIL2CPP_CODEGEN_API MonoGenericCMethod
+    {
+    public:
+        static Il2CppReflectionType* get_ReflectedType(void* /* System.Reflection.MonoGenericCMethod */ self);
+    };
+} /* namespace Reflection */
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d4864fbb635f1d2bd01b6a9575f52567a74bca735e47978476fba724b8739d80
-size 1008
+#pragma once
+
+#include "il2cpp-config.h"
+#include "il2cpp-pinvoke-support.h"
+#include "utils/StringView.h"
+#include <string>
+
+namespace il2cpp
+{
+namespace os
+{
+    class LibraryLoader
+    {
+    public:
+        static Il2CppMethodPointer GetHardcodedPInvokeDependencyFunctionPointer(const il2cpp::utils::StringView<Il2CppNativeChar>& nativeDynamicLibrary, const il2cpp::utils::StringView<char>& entryPoint);
+        static void* LoadDynamicLibrary(const utils::StringView<Il2CppNativeChar>& nativeDynamicLibrary);
+        static void* LoadDynamicLibrary(const utils::StringView<Il2CppNativeChar>& nativeDynamicLibrary, int flags);
+        static Il2CppMethodPointer GetFunctionPointer(void* dynamicLibrary, const PInvokeArguments& pinvokeArgs);
+        static Il2CppMethodPointer GetFunctionPointer(void* dynamicLibrary, const char* functionName);
+        static void CleanupLoadedLibraries();
+        static bool CloseLoadedLibrary(void*& dynamicLibrary);
+    };
+} /* namespace os */
+} /* namespace il2cpp*/

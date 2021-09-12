@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:66cfce847590c0959cea273f280598d67931e880b3202eb871cb7ceb7361de87
-size 378
+#pragma once
+
+#include <stdint.h>
+#include "WaitStatus-c-api.h"
+
+#if defined(__cplusplus)
+#include "os/Socket.h"
+
+
+#else
+
+
+#endif //__cplusplus
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+UnityPalWaitStatus UnityPalGetHostByName(const char* host, char** name, int32_t* family, char*** aliases, void*** address_list, int32_t* address_size);
+
+#if defined(__cplusplus)
+}
+#endif

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b82bc4fd6e443d05745f324e2afef8dccf3bf9d049a0220c1bd1d9fb8864939c
-size 428
+#pragma once
+
+#include <il2cpp-object-internals.h>
+#include "StringView.h"
+
+namespace il2cpp
+{
+namespace utils
+{
+    class Il2CppHStringReference
+    {
+    private:
+        Il2CppHString m_String;
+        Il2CppHStringHeader m_Header;
+
+    public:
+        Il2CppHStringReference(const StringView<Il2CppNativeChar>& str);
+
+        inline operator Il2CppHString() const
+        {
+            return m_String;
+        }
+    };
+}
+}

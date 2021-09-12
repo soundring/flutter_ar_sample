@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d566e578525b1eaba327625af2518ba614e3879f55f083bbee57799bf1defc01
-size 573
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+    class LIBIL2CPP_CODEGEN_API NumberFormatter
+    {
+    public:
+        static void GetFormatterTables(uint64_t * * mantissas,
+            int32_t * * exponents,
+            int16_t * * digitLowerTable,
+            int16_t * * digitUpperTable,
+            int64_t * * tenPowersList,
+            int32_t * * decHexDigits);
+    };
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

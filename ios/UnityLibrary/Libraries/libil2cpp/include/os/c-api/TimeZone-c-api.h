@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:01ba640f929b5d27bad5e0f1b721cf4286f78b497d0ebb9bbac3eea56558c91e
-size 202
+#pragma once
+
+#include <stdint.h>
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+int32_t UnityPalGetTimeZoneData(int32_t year, int64_t data[4], const char* names[2]);
+
+#if defined(__cplusplus)
+}
+#endif

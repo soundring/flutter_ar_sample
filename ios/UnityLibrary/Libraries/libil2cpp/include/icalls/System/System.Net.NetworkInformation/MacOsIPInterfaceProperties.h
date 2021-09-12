@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:efd69c81b94b4ffd61fbb48a8f84749dfde372ef58a462b96e4a9730611eacda
-size 456
+#pragma once
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace System
+{
+namespace System
+{
+namespace Net
+{
+namespace NetworkInformation
+{
+    class LIBIL2CPP_CODEGEN_API MacOsIPInterfaceProperties
+    {
+    public:
+        static bool ParseRouteInfo_internal(Il2CppString* iface, Il2CppArray** gw_addr_list);
+    };
+} // namespace NetworkInformation
+} // namespace Net
+} // namespace System
+} // namespace System
+} // namespace icalls
+} // namespace il2cpp

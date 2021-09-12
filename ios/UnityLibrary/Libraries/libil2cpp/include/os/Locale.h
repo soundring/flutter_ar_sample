@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3c33dba3a0717b9b0225c64d5b7b21224b14383ad4cff844c187c8fa10d9dc8c
-size 421
+#pragma once
+
+#include <stdint.h>
+#include <string>
+
+namespace il2cpp
+{
+namespace os
+{
+    class Locale
+    {
+    public:
+        static void Initialize();
+        static void UnInitialize();
+
+        static std::string GetLocale();
+#if IL2CPP_SUPPORT_LOCALE_INDEPENDENT_PARSING
+        static double DoubleParseLocaleIndependentImpl(char *ptr, char** endptr);
+#endif
+    };
+} /* namespace os */
+} /* namespace il2cpp */

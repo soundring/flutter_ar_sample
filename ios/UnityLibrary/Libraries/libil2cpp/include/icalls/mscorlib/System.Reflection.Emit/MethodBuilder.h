@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:700472f444710609668d173eb4b85d26d71f4d640204603c4823bdb283a3df6d
-size 533
+#pragma once
+
+#include "il2cpp-config.h"
+struct Il2CppArray;
+struct Il2CppReflectionMethod;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Reflection
+{
+namespace Emit
+{
+    class LIBIL2CPP_CODEGEN_API MethodBuilder
+    {
+    public:
+        static Il2CppReflectionMethod* MakeGenericMethod(Il2CppReflectionMethod*, Il2CppArray*);
+    };
+} /* namespace Emit */
+} /* namespace Reflection */
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

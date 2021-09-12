@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b8450754481ccf4bbddf6b6ea3a3cd20508d32d8525c6ef9d9b290b43b942331
-size 335
+#pragma once
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Threading
+{
+    class LIBIL2CPP_CODEGEN_API Timer
+    {
+    public:
+        static int64_t GetTimeMonotonic();
+    };
+} // namespace Threading
+} // namespace System
+} // namespace mscorlib
+} // namespace icalls
+} // namespace il2cpp

@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5d7a17ecb31c4c954198a3a3adde94fd9c7a5691788adc5c65d95e4ac35a7a07
-size 971
+#pragma once
+#include "il2cpp-config.h"
+
+#include <string>
+#include <vector>
+
+namespace il2cpp
+{
+namespace os
+{
+    typedef bool(*WalkStackCallback)(Il2CppMethodPointer frame, void* context);
+
+    class StackTrace
+    {
+    public:
+        enum WalkOrder
+        {
+            kFirstCalledToLastCalled,
+            kLastCalledToFirstCalled
+        };
+
+        // Walks the stack calling callback for each frame in the stack
+        // Stops when callback returns false
+        static void WalkStack(WalkStackCallback callback, void* context, WalkOrder walkOrder);
+
+#if IL2CPP_ENABLE_NATIVE_STACKTRACES
+        static std::string NativeStackTrace();
+#endif
+
+        // Returns SP value or nullptr if not implemented
+        static const void* GetStackPointer();
+
+        static void OverrideStackBacktrace(Il2CppBacktraceFunc stackBacktraceFunc);
+    private:
+        static void WalkStackNative(WalkStackCallback callback, void* context, WalkOrder walkOrder);
+    };
+}
+}

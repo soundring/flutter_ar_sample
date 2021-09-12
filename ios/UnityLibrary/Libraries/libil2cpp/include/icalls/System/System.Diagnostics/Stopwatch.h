@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e67f245c7d7cc9b2b43aab81e84e07244bbb118569a7b4ecb82442d56f2342e1
-size 400
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace System
+{
+namespace System
+{
+namespace Diagnostics
+{
+    class LIBIL2CPP_CODEGEN_API Stopwatch
+    {
+    public:
+        static int64_t GetTimestamp();
+    };
+} /* namespace Diagnostics */
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

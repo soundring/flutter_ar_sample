@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6734d6beea32016d1d16c63b66f92844cabaec3a9fd94af0cb5935344635f774
-size 545
+#pragma once
+
+#include <stdint.h>
+
+#include "il2cpp-config.h"
+#include "il2cpp-object-internals.h"
+
+extern "C"
+{
+    struct ZStream;
+
+    IL2CPP_EXPORT intptr_t CreateZStream(int32_t compress, uint8_t gzip, Il2CppMethodPointer func, intptr_t gchandle);
+    IL2CPP_EXPORT int32_t CloseZStream(intptr_t zstream);
+    IL2CPP_EXPORT int32_t Flush(intptr_t zstream);
+    IL2CPP_EXPORT int32_t ReadZStream(intptr_t zstream, intptr_t buffer, int32_t length);
+    IL2CPP_EXPORT int32_t WriteZStream(intptr_t zstream, intptr_t buffer, int32_t length);
+}

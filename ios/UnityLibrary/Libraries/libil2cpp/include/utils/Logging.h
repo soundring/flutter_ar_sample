@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7e3568f2f56d91b54cb766b79edd7100e099ae6d881d1c9e2d26f3053d6344db
-size 361
+#pragma once
+
+#include "il2cpp-config.h"
+
+namespace il2cpp
+{
+namespace utils
+{
+    class LIBIL2CPP_CODEGEN_API Logging
+    {
+    public:
+        static void Write(const char* format, ...);
+        static void SetLogCallback(Il2CppLogCallback method);
+        static bool IsLogCallbackSet();
+
+    private:
+        static Il2CppLogCallback s_Callback;
+    };
+}
+}

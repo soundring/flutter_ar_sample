@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72f2dfa52c036f2ac323ddc52ae236c3aeb7a5e08b0ea78262c6ecf839c8abbc
-size 327
+#pragma once
+
+extern const uint8_t CategoryData_v4[71680];
+extern const uint8_t NumericData[12938];
+extern const double NumericDataValues[58];
+extern const Il2CppChar ToLowerDataLow[9424];
+extern const Il2CppChar ToLowerDataHigh[223];
+extern const Il2CppChar ToUpperDataLow[9450];
+extern const Il2CppChar ToUpperDataHigh[223];

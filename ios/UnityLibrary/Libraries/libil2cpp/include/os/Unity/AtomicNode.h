@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1b6523de23f69e4b8e5c2ce6106de654628ea30a63689da176cd84f36911f6ff
-size 443
+#pragma once
+
+#include "ExtendedAtomicTypes.h"
+
+UNITY_PLATFORM_BEGIN_NAMESPACE;
+
+class AtomicNode
+{
+    friend class AtomicStack;
+    friend class AtomicQueue;
+    friend class MutexLockedStack;
+    friend class MutexLockedQueue;
+
+    volatile atomic_word _next;
+
+public:
+    void* data[3];
+
+    AtomicNode *Next() const
+    {
+        return (AtomicNode*)_next;
+    }
+
+    AtomicNode *Link(AtomicNode *next);
+};
+
+UNITY_PLATFORM_END_NAMESPACE;

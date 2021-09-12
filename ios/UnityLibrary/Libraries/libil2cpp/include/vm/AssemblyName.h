@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e5d7daee5960f8fa8289cceef5c5c4e3e0767465c004998a12bbe1644ce76068
-size 811
+#pragma once
+
+#include <stdint.h>
+#include <vector>
+#include <string>
+#include "il2cpp-config.h"
+struct Il2CppAssemblyName;
+struct Il2CppReflectionAssemblyName;
+struct Il2CppMonoAssemblyName;
+
+namespace il2cpp
+{
+namespace vm
+{
+    class LIBIL2CPP_CODEGEN_API AssemblyName
+    {
+// exported
+    public:
+        static void AssemblyNameReportChunked(const Il2CppAssemblyName & aname, void(*chunkReportFunction)(void *data, void *userData), void * userData);
+        static std::string AssemblyNameToString(const Il2CppAssemblyName& aname);
+        static bool ParseName(Il2CppReflectionAssemblyName* aname, std::string assemblyName);
+        static void FillNativeAssemblyName(const Il2CppAssemblyName& aname, Il2CppMonoAssemblyName* nativeName);
+    private:
+    };
+} /* namespace vm */
+} /* namespace il2cpp */

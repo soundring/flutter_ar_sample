@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ca5dc3c2b4112655e553d06aefdb39877ea5e2b90d824adbb40d8254229372e2
-size 797
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+
+struct Il2CppObject;
+struct Il2CppReflectionType;
+struct Il2CppReflectionMethod;
+
+struct Il2CppDelegate;
+struct Il2CppMulticastDelegate;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+    class LIBIL2CPP_CODEGEN_API Delegate
+    {
+    public:
+        static Il2CppDelegate * CreateDelegate_internal(Il2CppReflectionType *, Il2CppObject *, Il2CppReflectionMethod *, bool);
+        static void SetMulticastInvoke(Il2CppDelegate *);
+        static Il2CppMulticastDelegate* AllocDelegateLike_internal(Il2CppDelegate* d);
+        static Il2CppObject* GetVirtualMethod_internal(Il2CppObject* _this);
+    };
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

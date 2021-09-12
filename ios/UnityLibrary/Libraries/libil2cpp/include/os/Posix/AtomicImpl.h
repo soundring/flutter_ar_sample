@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8616d17bc4a69f19648bf099834123b7f466c7795f7f51e33a1421c11b7c9e36
-size 277
+#pragma once
+
+// Assumes clang or gcc as compiler.
+#if IL2CPP_TARGET_POSIX && !IL2CPP_TINY_WITHOUT_DEBUGGER
+
+#include "os/c-api/Atomic-c-api.h"
+
+namespace il2cpp
+{
+namespace os
+{
+    inline void Atomic::FullMemoryBarrier()
+    {
+        __sync_synchronize();
+    }
+}
+}
+
+#endif

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2da03eb3652ca86889c9f87c40e8a7500b234bc4f74f08153fa929bddfaf516f
-size 307
+#pragma once
+
+struct Il2CppGenericClass;
+
+namespace il2cpp
+{
+namespace metadata
+{
+    class Il2CppGenericClassHash
+    {
+    public:
+        size_t operator()(const Il2CppGenericClass* ea) const;
+        static size_t Hash(const Il2CppGenericClass* t1);
+    };
+} /* namespace vm */
+} /* namespace il2cpp */

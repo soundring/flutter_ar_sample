@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8d46ef86f754eef9bfc4c4275b698a29a905af8efa185f87fac62f367dc067b2
-size 306
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+
+struct EventInfo;
+
+namespace il2cpp
+{
+namespace vm
+{
+    class LIBIL2CPP_CODEGEN_API Event
+    {
+    public:
+        // exported
+        static uint32_t GetToken(const EventInfo *eventInfo);
+    };
+} /* namespace vm */
+} /* namespace il2cpp */

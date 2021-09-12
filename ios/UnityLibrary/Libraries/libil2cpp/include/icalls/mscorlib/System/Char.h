@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d13d040b9f6f8915c9a0427b99612e83dddb42f60f0d2b7e9101734e678838c9
-size 694
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+    class LIBIL2CPP_CODEGEN_API Char
+    {
+    public:
+        static void GetDataTablePointers(
+            const unsigned char** category_data,
+            const unsigned char** numeric_data,
+            const double** numeric_data_values,
+            const Il2CppChar** to_lower_data_low,
+            const Il2CppChar** to_lower_data_high,
+            const Il2CppChar** to_upper_data_low,
+            const Il2CppChar** to_upper_data_high);
+    };
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

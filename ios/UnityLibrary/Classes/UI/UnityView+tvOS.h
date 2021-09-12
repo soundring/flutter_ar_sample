@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:26f3c92e365aba14324da6cdc35ea7d3e685096f5ca28e27bfd9858ab4beb61c
-size 502
+#pragma once
+
+@interface UnityView (tvOS)
+
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event;
+- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event;
+- (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event;
+- (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event;
+
+#if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
+- (void)pressesBegan:(NSSet<UIPress*>*)presses withEvent:(UIEvent*)event;
+- (void)pressesEnded:(NSSet<UIPress*>*)presses withEvent:(UIEvent*)event;
+#endif
+
+@end

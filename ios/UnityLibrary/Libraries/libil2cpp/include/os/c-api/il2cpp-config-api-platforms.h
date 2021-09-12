@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9fef93bad539a8d5008873209016c199b5e9203156d70fccbd8889f2aa93f20
-size 424
+#pragma once
+
+#include "os/c-api/il2cpp-config-platforms.h"
+
+#ifdef _MSC_VER
+# include <malloc.h>
+# define IL2CPP_EXPORT __declspec(dllexport)
+# define IL2CPP_IMPORT __declspec(dllimport)
+#elif IL2CPP_TARGET_PSP2 || IL2CPP_TARGET_PS4
+# define IL2CPP_EXPORT __declspec(dllexport)
+# define IL2CPP_IMPORT __declspec(dllimport)
+#else
+# define IL2CPP_EXPORT __attribute__ ((visibility ("default")))
+# define IL2CPP_IMPORT
+#endif

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:78b5ee88a360a4844ed5de115d3cd33dd6fe36e831164765ca46a28d97d5f1dc
-size 661
+#pragma once
+
+// small helper for getting texture from CMSampleBuffer
+
+typedef struct
+    CMVideoSampling
+{
+    void*   cvTextureCache;
+    void*   cvTextureCacheTexture;
+    void*   cvImageBuffer;
+}
+CMVideoSampling;
+
+void CMVideoSampling_Initialize(CMVideoSampling* sampling);
+void CMVideoSampling_Uninitialize(CMVideoSampling* sampling);
+
+intptr_t  CMVideoSampling_ImageBuffer(CMVideoSampling* sampling, CVImageBufferRef buffer, size_t* w, size_t* h);
+intptr_t  CMVideoSampling_SampleBuffer(CMVideoSampling* sampling, void* buffer, size_t* w, size_t* h); // buffer is CMSampleBufferRef
+intptr_t  CMVideoSampling_LastSampledTexture(CMVideoSampling* sampling);

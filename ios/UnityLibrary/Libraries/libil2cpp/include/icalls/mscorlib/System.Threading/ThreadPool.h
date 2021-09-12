@@ -1,3 +1,43 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea55f219c77a09d798298b7831ec597da46ddb9c7cda1acf5cc4ac6980d988e4
-size 1169
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-object-internals.h"
+#include "il2cpp-config.h"
+
+struct Il2CppObject;
+struct Il2CppDelegate;
+struct Il2CppReflectionType;
+struct Il2CppReflectionMethod;
+struct Il2CppReflectionField;
+struct Il2CppArray;
+struct Il2CppException;
+struct Il2CppReflectionModule;
+struct Il2CppAssembly;
+struct Il2CppAssemblyName;
+struct Il2CppAppDomain;
+struct Il2CppNativeOverlapped;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Threading
+{
+    class LIBIL2CPP_CODEGEN_API ThreadPool
+    {
+    public:
+        static void GetAvailableThreads(int32_t* workerThreads, int32_t* completionPortThreads);
+        static void GetMinThreads(int32_t* workerThreads, int32_t* completionPortThreads);
+        static bool SetMaxThreads(int32_t workerThreads, int32_t completionPortThreads);
+        static bool SetMinThreads(int32_t workerThreads, int32_t completionPortThreads);
+        static void GetMaxThreads(int32_t* workerThreads, int32_t* completionPortThreads);
+    };
+} /* namespace Threading */
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

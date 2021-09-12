@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:507b873115a43a7bc1e164f420f7e8cc0c07ce8d1228d33619e8979239992d0f
-size 407
+#pragma once
+
+#include <stdint.h>
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+int32_t UnityPalConsoleInternalKeyAvailable(int32_t ms_timeout);
+int32_t UnityPalConsoleSetBreak(int32_t wantBreak);
+int32_t UnityPalConsoleSetEcho(int32_t wantEcho);
+int32_t UnityPalConsoleTtySetup(const char* keypadXmit, const char* teardown, uint8_t* control_characters, int32_t** size);
+
+#if defined(__cplusplus)
+}
+#endif

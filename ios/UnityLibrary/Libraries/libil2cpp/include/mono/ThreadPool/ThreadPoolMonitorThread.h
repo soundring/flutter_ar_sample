@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f008c53b50541c11b5459c926de88eae66079937ce6a9ebde7d5a3d432a46c03
-size 206
+#pragma once
+
+enum MonitorStatus
+{
+    MONITOR_STATUS_REQUESTED,
+    MONITOR_STATUS_WAITING_FOR_REQUEST,
+    MONITOR_STATUS_NOT_RUNNING,
+};
+
+void monitor_ensure_running();
+MonitorStatus GetMonitorStatus();

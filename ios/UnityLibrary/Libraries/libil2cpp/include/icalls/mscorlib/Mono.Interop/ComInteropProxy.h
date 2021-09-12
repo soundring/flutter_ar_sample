@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e64ac6023b9eaeb1ddcda3305aec185ff4798d2d4c790e1d7674e04a6d4c2611
-size 613
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+#include "il2cpp-object-internals.h"
+
+struct mscorlib_Mono_Interop_ComInteropProxy;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace Mono
+{
+namespace Interop
+{
+    class LIBIL2CPP_CODEGEN_API ComInteropProxy
+    {
+    public:
+        static void AddProxy(intptr_t pItf, mscorlib_Mono_Interop_ComInteropProxy * proxy);
+        static mscorlib_Mono_Interop_ComInteropProxy* FindProxy(intptr_t pItf);
+    };
+} /* namespace Interop */
+} /* namespace Mono */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

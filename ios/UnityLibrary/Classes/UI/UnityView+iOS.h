@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0727bb29c75b2238e5c2393f79852639b492beda91d7160dd869fe54c5d91450
-size 699
+#pragma once
+
+@interface UnityView (iOS)
+
+// will simply update content orientation (it might be tweaked in layoutSubviews, due to disagreement between unity and view controller)
+- (void)willRotateToOrientation:(UIInterfaceOrientation)toOrientation fromOrientation:(UIInterfaceOrientation)fromOrientation;
+// will recreate gles backing if needed and repaint once to make sure we dont have black frame creeping in
+- (void)didRotate;
+
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event;
+- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event;
+- (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event;
+- (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event;
+
+@end

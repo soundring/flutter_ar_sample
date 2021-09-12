@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:672a2b2eacc9a4a05f5cd89801bb65d1ececada3806af1b04d42ecbed0059671
-size 389
+#pragma once
+
+struct Il2CppWaitHandle;
+namespace il2cpp { namespace os { class Handle; } }
+
+namespace il2cpp
+{
+namespace vm
+{
+    class LIBIL2CPP_CODEGEN_API WaitHandle
+    {
+    public:
+        static Il2CppWaitHandle* NewManualResetEvent(bool initialState);
+        static os::Handle* GetPlatformHandle(Il2CppWaitHandle* waitHandle);
+    };
+} /* namespace vm */
+} /* namespace il2cpp */

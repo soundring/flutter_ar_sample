@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:00a1c6fdee13bb21f10b12b7febd2359edbae7bc9bfd717d276a073a9919078a
-size 451
+#pragma once
+
+struct Il2CppCalendarData;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Globalization
+{
+    class LIBIL2CPP_CODEGEN_API CalendarData
+    {
+    public:
+        static bool fill_calendar_data(Il2CppCalendarData* _this, Il2CppString* localeName, int32_t datetimeIndex);
+    };
+} // namespace Globalization
+} // namespace System
+} // namespace mscorlib
+} // namespace icalls
+} // namespace il2cpp

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:25ea29feeeb07245f701088d163763e2dacb659efd7c3dfee382595272139041
-size 224
+#pragma once
+
+#include "os/c-api/Error-c-api.h"
+#include "os/c-api/Messages-c-api.h"
+
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+char* UnityPalMessagesFromCode(UnityPalErrorCode code);
+
+#if defined(__cplusplus)
+}
+#endif

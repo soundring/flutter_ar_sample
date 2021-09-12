@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a0da0d4e0723c1f8def41aabe555d58d5796a5548b032d1c98219caa4a1199e8
-size 439
+#pragma once
+#include "il2cpp-object-internals.h"
+
+struct Il2CppInternalThread;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Threading
+{
+    class LIBIL2CPP_CODEGEN_API InternalThread
+    {
+    public:
+        static void Thread_free_internal(Il2CppInternalThread* _this);
+    };
+} // namespace Threading
+} // namespace System
+} // namespace mscorlib
+} // namespace icalls
+} // namespace il2cpp

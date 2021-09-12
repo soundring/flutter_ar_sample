@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:df84e10c06908adbe37d4e688edaa74c20f47b1dfde1331985aace790c788119
-size 593
+#pragma once
+
+#include <stdint.h>
+#include <string>
+
+namespace il2cpp
+{
+namespace os
+{
+    struct ProcessHandle;
+
+    class Process
+    {
+    public:
+        static int GetCurrentProcessId();
+        static ProcessHandle* GetProcess(int processId);
+        static void FreeProcess(ProcessHandle* handle);
+        static std::string GetProcessName(ProcessHandle* handle);
+        static int64_t Times(ProcessHandle* handle, int32_t type);
+        static int64_t StartTime(ProcessHandle* handle);
+        static int64_t GetProcessData(int32_t pid, int32_t data_type, int32_t* error);
+    };
+}
+}

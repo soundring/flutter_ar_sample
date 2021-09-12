@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6382a08c8429ae1bcbbb2e8ab16b986965e234e13bd341a0549f76f9cce0d91c
-size 451
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+
+struct Il2CppArray;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+    class LIBIL2CPP_CODEGEN_API CurrentSystemTimeZone
+    {
+    public:
+        static bool GetTimeZoneData40(int year, Il2CppArray * *, Il2CppArray * *, bool * daylight_inverted);
+    };
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5370fa502347fe059a427eef2a136e41ed4b16a72cf3a7bd606d32e83c0b9cb2
-size 522
+#pragma once
+
+#include "il2cpp-object-internals.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+    class LIBIL2CPP_CODEGEN_API SizedReference
+    {
+    public:
+        static int64_t GetApproximateSizeOfSizedRef(intptr_t h);
+        static intptr_t CreateSizedRef(Il2CppObject* o);
+        static Il2CppObject* GetTargetOfSizedRef(intptr_t h);
+        static void FreeSizedRef(intptr_t h);
+    };
+} // namespace System
+} // namespace mscorlib
+} // namespace icalls
+} // namespace il2cpp

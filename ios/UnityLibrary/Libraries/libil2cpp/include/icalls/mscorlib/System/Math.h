@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:75de70e6a0fc65d397ba39d05ac1c9ec16c299d74b42ff2cad3ff6cfd4440010
-size 1235
+#pragma once
+#include "il2cpp-config.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+    class LIBIL2CPP_CODEGEN_API Math
+    {
+    public:
+        static double Acos(double val);
+        static double Asin(double val);
+        static double Atan(double val);
+        static double Atan2(double y, double x);
+        static double Cos(double val);
+        static double Cosh(double val);
+        static double Exp(double val);
+        static double Floor(double x);
+        static double Log(double x);
+        static double Log10(double val);
+        static double Pow(double val, double exp);
+        static double Round(double x);
+        static double Round2(double value, int32_t digits, bool away_from_zero);
+        static double Sin(double val);
+        static double Sinh(double val);
+        static double Sqrt(double val);
+        static double Tan(double val);
+        static double Tanh(double val);
+        static double Abs(double value);
+        static double Ceiling(double a);
+        static double SplitFractionDouble(double* value);
+        static float Abs(float value);
+    };
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

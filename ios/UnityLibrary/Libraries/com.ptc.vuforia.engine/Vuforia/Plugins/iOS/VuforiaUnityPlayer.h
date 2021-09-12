@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b297296c523e58e7e6aeafcb1e7ac77d0ff17f375b0389b7f37ca5f077accfb3
-size 501
+/*============================================================================
+Copyright (c) 2017 PTC Inc. All Rights Reserved.
+
+Copyright (c) 2012-2014 Qualcomm Connected Experiences, Inc.
+All Rights Reserved.
+Confidential and Proprietary - Protected under copyright and other laws.
+============================================================================*/
+
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+   
+   int getRotationFlag(int screenOrientation);
+
+#ifdef __cplusplus
+}
+#endif

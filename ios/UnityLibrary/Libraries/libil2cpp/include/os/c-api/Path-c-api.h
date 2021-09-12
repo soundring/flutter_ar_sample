@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:51935293a8abdf1ef35d9dcdb862695b454b6f26f2f0b78cc96aff8edb8387c0
-size 319
+#pragma once
+
+#include <stdint.h>
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+char* UnityPalGetExecutablePath();
+char* UnityPalGetTempPath();
+int32_t UnityPalIsAbsolutePath(const char* path);
+char* UnityPalBasename(const char* path);
+char* UnityPalDirectoryName(const char* path);
+
+#if defined(__cplusplus)
+}
+#endif

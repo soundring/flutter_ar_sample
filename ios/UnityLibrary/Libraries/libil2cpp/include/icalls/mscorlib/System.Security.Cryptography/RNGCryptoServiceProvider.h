@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd0c96609a585bfd2a932d4858b927719b0356b3a79b4c369017f7b75bfa84d6
-size 639
+#pragma once
+
+#include "il2cpp-config.h"
+#include "il2cpp-object-internals.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Security
+{
+namespace Cryptography
+{
+    class LIBIL2CPP_CODEGEN_API RNGCryptoServiceProvider
+    {
+    public:
+        static void RngClose(intptr_t handle);
+        static intptr_t RngGetBytes(intptr_t, Il2CppArray *);
+        static intptr_t RngInitialize(Il2CppArray *);
+        static bool RngOpen();
+    };
+} /* namespace Cryptography */
+} /* namespace Security */
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

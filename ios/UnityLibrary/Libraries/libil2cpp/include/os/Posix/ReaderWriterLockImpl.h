@@ -1,3 +1,70 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c69dd34a2ac78c2e87945a882777d051c088f9ba7abeb8d83ba8f8a91a98f1d9
-size 1490
+#pragma once
+
+#include "il2cpp-config.h"
+
+#if IL2CPP_THREADS_PTHREAD && !IL2CPP_TINY_WITHOUT_DEBUGGER
+
+#include <pthread.h>
+
+namespace il2cpp
+{
+namespace os
+{
+    class ReaderWriterLockImpl
+    {
+    public:
+
+        ReaderWriterLockImpl()
+        {
+            int result = pthread_rwlock_init(&m_Lock, NULL);
+            NO_UNUSED_WARNING(result);
+            IL2CPP_ASSERT(result == 0);
+        }
+
+        ~ReaderWriterLockImpl()
+        {
+            int result = pthread_rwlock_destroy(&m_Lock);
+            NO_UNUSED_WARNING(result);
+            IL2CPP_ASSERT(result == 0);
+        }
+
+        void LockExclusive()
+        {
+            int result = pthread_rwlock_wrlock(&m_Lock);
+            NO_UNUSED_WARNING(result);
+            IL2CPP_ASSERT(result == 0);
+        }
+
+        void LockShared()
+        {
+            int result = pthread_rwlock_rdlock(&m_Lock);
+            NO_UNUSED_WARNING(result);
+            IL2CPP_ASSERT(result == 0);
+        }
+
+        void ReleaseExclusive()
+        {
+            int result = pthread_rwlock_unlock(&m_Lock);
+            NO_UNUSED_WARNING(result);
+            IL2CPP_ASSERT(result == 0);
+        }
+
+        void ReleaseShared()
+        {
+            int result = pthread_rwlock_unlock(&m_Lock);
+            NO_UNUSED_WARNING(result);
+            IL2CPP_ASSERT(result == 0);
+        }
+
+        pthread_rwlock_t* GetOSHandle()
+        {
+            return &m_Lock;
+        }
+
+    private:
+        pthread_rwlock_t  m_Lock;
+    };
+}
+}
+
+#endif

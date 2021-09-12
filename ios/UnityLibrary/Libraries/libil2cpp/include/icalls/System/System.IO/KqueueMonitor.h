@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2aaf6c3183b7a9a8ba7656154796825dec518ece78a88097ad6401ea7d6a1550
-size 439
+#pragma once
+#include "il2cpp-object-internals.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace System
+{
+namespace System
+{
+namespace IO
+{
+    class LIBIL2CPP_CODEGEN_API KqueueMonitor
+    {
+    public:
+        static int32_t kevent_notimeout(int32_t* kq, intptr_t ev, int32_t nchanges, intptr_t evtlist, int32_t nevents);
+    };
+} // namespace IO
+} // namespace System
+} // namespace System
+} // namespace icalls
+} // namespace il2cpp

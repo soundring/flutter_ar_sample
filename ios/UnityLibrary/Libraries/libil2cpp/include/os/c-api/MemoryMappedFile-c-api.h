@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:45f14b0733e16c0e2bdf43bcd794c03931ed81bf778ae05510fe4e0c47181b36
-size 413
+#pragma once
+
+#include "File-c-api.h"
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+void* UnityPalMemoryMappedFileMap(UnityPalFileHandle* file);
+void UnityPalMemoryMappedFileUnmap(void* address);
+
+void* UnityPalMemoryMappedFileMapWithParams(UnityPalFileHandle* file, int64_t length, int64_t offset);
+void UnityPalMemoryMappedFileUnmapWithParams(void* address, int64_t length);
+
+#if defined(__cplusplus)
+}
+#endif

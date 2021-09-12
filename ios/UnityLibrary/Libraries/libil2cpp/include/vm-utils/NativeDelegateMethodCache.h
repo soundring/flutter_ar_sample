@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90afdaa112c338a4c5bddd7f24c8723b23dcf67faa44b8023faccec8990ba878
-size 665
+#pragma once
+
+#include "il2cpp-api-types.h"
+#include "il2cpp-vm-support.h"
+#include "os/Mutex.h"
+#include <map>
+
+namespace il2cpp
+{
+namespace utils
+{
+    typedef std::map<Il2CppMethodPointer, const VmMethod*> NativeDelegateMap;
+
+    class NativeDelegateMethodCache
+    {
+    public:
+        static const VmMethod* GetNativeDelegate(Il2CppMethodPointer nativeFunctionPointer);
+        static void AddNativeDelegate(Il2CppMethodPointer nativeFunctionPointer, const VmMethod* managedMethodInfo);
+    private:
+        static il2cpp::os::FastMutex m_CacheMutex;
+        static NativeDelegateMap m_NativeDelegateMethods;
+    };
+} // namespace utils
+} // namespace il2cpp

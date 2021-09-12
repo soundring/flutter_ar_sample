@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b1f0fc928658752e0845f54ce0979d860a433c2f87ec7559150884a8d93df2e9
-size 871
+#pragma once
+
+#include <stdint.h>
+
+namespace il2cpp
+{
+namespace utils
+{
+namespace TemplateUtils
+{
+    template<typename T, typename U>
+    struct IsSame
+    {
+        static const bool value = false;
+    };
+
+    template<typename T>
+    struct IsSame<T, T>
+    {
+        static const bool value = true;
+    };
+
+    template<typename B, typename D>
+    struct IsBaseOf
+    {
+    private:
+        template<typename BT, typename DT>
+        struct Converter
+        {
+            operator BT*() const;
+            operator DT*();
+        };
+
+        typedef int16_t Derived;
+        typedef int8_t NotDerived;
+
+        template<typename T>
+        static Derived IsDerived(D*, T);
+        static NotDerived IsDerived(B*, int);
+
+    public:
+        static const bool value = IsSame<B, D>::value || sizeof(IsDerived(Converter<B, D>(), int())) == sizeof(Derived);
+    };
+}
+}
+}

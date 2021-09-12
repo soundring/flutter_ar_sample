@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f7173ecc8465deb26e323b5696c5c995c581df0f949590eab7835ab1201f4134
-size 537
+PODS:
+  - Flutter (1.0.0)
+  - flutter_unity_widget (4.0.0):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_unity_widget (from `.symlinks/plugins/flutter_unity_widget/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_unity_widget:
+    :path: ".symlinks/plugins/flutter_unity_widget/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  flutter_unity_widget: e509f3109933aa0c63b1bc149ca3d5b90fb68543
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.11.0

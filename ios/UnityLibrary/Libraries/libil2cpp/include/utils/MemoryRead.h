@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:beb1b032df2906e0f6ca70b203a5534a0008974e02facb55478e7ec273b6db03
-size 831
+#pragma once
+
+#include <stdint.h>
+#include <memory.h>
+
+// unaligned safe reading
+namespace il2cpp
+{
+namespace utils
+{
+    static inline Il2CppChar ReadChar(const char* p) { Il2CppChar val; memcpy(&val, p, sizeof(Il2CppChar)); return val; }
+    static inline uint16_t Read16(const char* p) { uint16_t val; memcpy(&val, p, sizeof(uint16_t)); return val; }
+    static inline uint32_t Read32(const char* p) { uint32_t val; memcpy(&val, p, sizeof(uint32_t)); return val; }
+    static inline uint64_t Read64(const char* p) { uint64_t val; memcpy(&val, p, sizeof(uint64_t)); return val; }
+    static inline float ReadFloat(const char* p) { float val; memcpy(&val, p, sizeof(float)); return val; }
+    static inline double ReadDouble(const char* p) { double val; memcpy(&val, p, sizeof(double)); return val; }
+} /* utils */
+} /* il2cpp */

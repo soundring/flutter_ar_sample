@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:52c6de4bfe0d0a309a0491495ff36dffce1c56f398793596917c2042be3556aa
-size 248
+#pragma once
+#include "il2cpp-config.h"
+
+namespace il2cpp
+{
+namespace vm
+{
+    class LIBIL2CPP_CODEGEN_API MetadataLoader
+    {
+    public:
+        static void* LoadMetadataFile(const char* fileName);
+    };
+} // namespace vm
+} // namespace il2cpp

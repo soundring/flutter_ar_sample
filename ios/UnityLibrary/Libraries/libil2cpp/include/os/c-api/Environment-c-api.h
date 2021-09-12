@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa55ce044855f02cdecc7c139ef5cbe1484bfb331faeba12383a28076c3fabc0
-size 380
+#pragma once
+
+#include <stdint.h>
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+char* UnityPalGetOsUserName();
+char* UnityPalGetMachineName();
+char* UnityPalGetEnvironmentVariable(const char* name);
+void UnityPalSetEnvironmentVariable(const char* name, const char* value);
+char* UnityPalGetHomeDirectory();
+int32_t UnityPalGetProcessorCount();
+
+#if defined(__cplusplus)
+}
+#endif

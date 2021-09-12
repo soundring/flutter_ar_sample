@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3874d767cd2ea6735600e495459dcf9f07e8e9fb4c938926b118d342bd5a1450
-size 523
+#pragma once
+
+#include <map>
+#include "os/File.h"
+#include "os/Mutex.h"
+#include "os/MemoryMappedFile.h"
+
+namespace il2cpp
+{
+namespace utils
+{
+    class MemoryMappedFile
+    {
+    public:
+        static void* Map(os::FileHandle* file);
+        static void* Map(os::FileHandle* file, int64_t length, int64_t offset);
+        static void* Map(os::FileHandle* file, int64_t length, int64_t offset, int32_t access);
+        static bool Unmap(void* address);
+        static bool Unmap(void* address, int64_t length);
+    };
+}
+}

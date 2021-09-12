@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0e8a2776f719b52a077152916efd6ebc6e0119b2f6719e6ce0aef819a157a5fc
-size 487
+#pragma once
+
+#include <list>
+
+namespace il2cpp
+{
+namespace utils
+{
+    class MemoryPool
+    {
+    public:
+        MemoryPool();
+        MemoryPool(size_t initialSize);
+        ~MemoryPool();
+        void* Malloc(size_t size);
+        void* Calloc(size_t count, size_t size);
+    private:
+        struct Region;
+        typedef std::list<Region*> RegionList;
+
+        Region* AddRegion(size_t size);
+
+        RegionList m_Regions;
+    };
+} /* namespace utils */
+} /* namespace il2cpp */

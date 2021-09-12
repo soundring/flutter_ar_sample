@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cdb3440506287e2dc5ad94f76d73a3987f8f4113f533a7337b5361331dbe679e
-size 472
+#pragma once
+
+#if defined(__cplusplus)
+
+typedef il2cpp::os::ProcessHandle UnityPalProcessHandle;
+
+#else
+
+typedef struct UnityPalProcessHandle UnityPalProcessHandle;
+
+#endif
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+int UnityPalGetCurrentProcessId();
+UnityPalProcessHandle* UnityPalGetProcess(int processId);
+void UnityPalFreeProcess(UnityPalProcessHandle* handle);
+const char* UnityPalGetProcessName(UnityPalProcessHandle* handle);
+
+#if defined(__cplusplus)
+}
+#endif

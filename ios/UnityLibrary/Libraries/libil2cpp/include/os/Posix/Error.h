@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02925fb1e7e6cdc57d5a29433bb1338643c44547628506c5759437ad9e09a776
-size 295
+#pragma once
+
+#include <string>
+#include <stdint.h>
+#include "os/ErrorCodes.h"
+
+namespace il2cpp
+{
+namespace os
+{
+    ErrorCode SocketErrnoToErrorCode(int32_t code);
+    ErrorCode FileErrnoToErrorCode(int32_t code);
+    ErrorCode PathErrnoToErrorCode(const std::string& path, int32_t code);
+}
+}

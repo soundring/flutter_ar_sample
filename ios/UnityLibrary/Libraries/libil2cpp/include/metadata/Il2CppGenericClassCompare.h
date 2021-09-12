@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d339d2c4c151497e50096962fb1077b001dc9784280e92002afdba177e11b058
-size 400
+#pragma once
+
+#include "utils/KeyWrapper.h"
+
+struct Il2CppGenericClass;
+
+namespace il2cpp
+{
+namespace metadata
+{
+    class Il2CppGenericClassCompare
+    {
+    public:
+        bool operator()(const Il2CppGenericClass* t1, const Il2CppGenericClass* t2) const;
+        static bool Compare(const Il2CppGenericClass* t1, const Il2CppGenericClass* t2);
+    };
+} /* namespace vm */
+} /* namespace il2cpp */

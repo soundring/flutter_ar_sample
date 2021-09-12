@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81a3856c52148946b7f845799243a828c6859014a9c75d2d1a1e5d39c89fa0b4
-size 390
+#pragma once
+
+#include "il2cpp-object-internals.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace System
+{
+namespace System
+{
+    class LIBIL2CPP_CODEGEN_API IOSelector
+    {
+    public:
+        static void Add(intptr_t handle, Il2CppObject* job);
+        static void Remove(intptr_t handle);
+    };
+} // namespace System
+} // namespace System
+} // namespace icalls
+} // namespace il2cpp

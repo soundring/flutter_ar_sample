@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b40f60790e0b564900daf0ac6ce3fc2f5c3610b2cd0793e449a8880acdc5fb02
-size 426
+#pragma once
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace System
+{
+namespace Configuration
+{
+namespace System
+{
+namespace Configuration
+{
+    class LIBIL2CPP_CODEGEN_API InternalConfigurationHost
+    {
+    public:
+        static Il2CppString* get_bundled_app_config();
+    };
+} // namespace Configuration
+} // namespace System
+} // namespace Configuration
+} // namespace System
+} // namespace icalls
+} // namespace il2cpp

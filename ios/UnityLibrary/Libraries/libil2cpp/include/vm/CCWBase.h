@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:973c44aa6857c3f7a59b2dfbe4cf88011a2184a2c7c6a3d7f1affc29fa1a2896
-size 828
+#pragma once
+
+#include "vm/ComObjectBase.h"
+
+namespace il2cpp
+{
+namespace vm
+{
+    struct LIBIL2CPP_CODEGEN_API NOVTABLE CCWBase : ComObjectBase, Il2CppIManagedObjectHolder, Il2CppIWeakReferenceSource
+    {
+    private:
+        Il2CppObject* m_ManagedObject;
+
+    public:
+        inline CCWBase(Il2CppObject* obj) :
+            m_ManagedObject(obj)
+        {
+            IL2CPP_ASSERT(obj != NULL);
+        }
+
+        IL2CPP_FORCE_INLINE Il2CppObject* GetManagedObjectInline() const
+        {
+            return m_ManagedObject;
+        }
+
+        il2cpp_hresult_t GetRuntimeClassNameImpl(Il2CppHString* className);
+
+        virtual Il2CppObject* STDCALL GetManagedObject() IL2CPP_OVERRIDE;
+        virtual il2cpp_hresult_t STDCALL GetWeakReference(Il2CppIWeakReference** weakReference) IL2CPP_FINAL IL2CPP_OVERRIDE;
+    };
+}
+}

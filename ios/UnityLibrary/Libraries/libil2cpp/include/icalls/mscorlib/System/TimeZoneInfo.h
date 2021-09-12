@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d28b54d4f04270f33da0c3ecb1d1a1ebbff044618215c7169efe8a3027a06e29
-size 357
+#pragma once
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+    class LIBIL2CPP_CODEGEN_API TimeZoneInfo
+    {
+    public:
+        static inline bool UseRegistryForTimeZoneInformation() { return IL2CPP_TARGET_WINDOWS_DESKTOP; }
+    };
+} // namespace System
+} // namespace mscorlib
+} // namespace icalls
+} // namespace il2cpp

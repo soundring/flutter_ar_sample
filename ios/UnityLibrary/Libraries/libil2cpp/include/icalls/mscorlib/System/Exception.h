@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6ffb5731e9f06cf3f6f172b035345d6a7f4fb10f11e0614df788e531b96a0512
-size 449
+#pragma once
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+    class LIBIL2CPP_CODEGEN_API Exception
+    {
+    public:
+        static bool nIsTransient(int32_t hr);
+        static Il2CppObject* GetMethodFromStackTrace(Il2CppObject* stackTrace);
+        static void ReportUnhandledException(Il2CppException* exception);
+    };
+} // namespace System
+} // namespace mscorlib
+} // namespace icalls
+} // namespace il2cpp

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:25e060b062c7c5cec9b5592061d831e0e0733408140600d4e5fbae628f5bb6bd
-size 518
+#pragma once
+
+namespace il2cpp
+{
+namespace vm
+{
+    class LIBIL2CPP_CODEGEN_API Random
+    {
+    public:
+        static bool Open();
+        static void* Create();
+        static void Free(void* handle);
+
+        static bool TryGetBytes(void** handle, unsigned char *buffer, int buffer_size);
+        static bool TryGetUnsignedInt32(void** handle, uint32_t *val, uint32_t min, uint32_t max);
+        static uint32_t Next(void** handle, uint32_t min, uint32_t max);
+    };
+} /* namespace vm */
+} /* namespace il2cpp */

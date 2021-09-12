@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:14d9d23e36cefc405f0ba63b83910ee500feda311513f2568f6698414da4c235
-size 361
+#pragma once
+
+namespace il2cpp
+{
+namespace os
+{
+    class TimeZoneInfo
+    {
+    public:
+        static bool UsePalForTimeZoneInfo();
+        static void* GetTimeZoneIDs();
+        static bool GetLocalTimeZoneData(void** nativeRawData, char** nativeID, int* size);
+        static bool GetTimeZoneDataForID(char* id, void** nativeRawData, int* size);
+    };
+}
+}

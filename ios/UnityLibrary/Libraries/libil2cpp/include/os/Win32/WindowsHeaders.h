@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0a901bb653c00991c29d742ee4ef19e24a352c5f1a30982e801ecae903278429
-size 123
+#pragma once
+
+#if IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_WINDOWS_GAMES
+
+#include "../c-api/Win32/WindowsHeaders.h"
+
+#endif

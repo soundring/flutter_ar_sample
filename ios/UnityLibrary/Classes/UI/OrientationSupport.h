@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:996144118fe7ae89a430096e8867c7fc2ed79ea784e9b94143f37dfc98090ca8
-size 856
+#pragma once
+
+#include <CoreGraphics/CGAffineTransform.h>
+
+#if !PLATFORM_TVOS
+ScreenOrientation       ConvertToUnityScreenOrientation(UIInterfaceOrientation hwOrient);
+UIInterfaceOrientation  ConvertToIosScreenOrientation(ScreenOrientation orient);
+#endif
+
+#if !PLATFORM_TVOS
+UIInterfaceOrientation  UIViewControllerInterfaceOrientation(UIViewController* controller);
+#endif
+ScreenOrientation       UIViewControllerOrientation(UIViewController* controller);
+
+CGAffineTransform       TransformForOrientation(ScreenOrientation curOrient);
+CGAffineTransform       TransformBetweenOrientations(ScreenOrientation fromOrient, ScreenOrientation toOrient);
+
+ScreenOrientation       OrientationAfterTransform(ScreenOrientation curOrient, CGAffineTransform transform);
+
+void                    OrientView(UIViewController* host, UIView* view, ScreenOrientation to);

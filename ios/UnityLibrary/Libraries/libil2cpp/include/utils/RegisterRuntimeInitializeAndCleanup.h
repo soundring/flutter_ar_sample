@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aaf87de2dc63673b1de1c37cdde04f7ecb1d0e4cbbf3f033b2275b91bb1b3870
-size 462
+#pragma once
+
+#include "il2cpp-config.h"
+
+namespace il2cpp
+{
+namespace utils
+{
+    class LIBIL2CPP_CODEGEN_API RegisterRuntimeInitializeAndCleanup
+    {
+    public:
+        typedef void (*CallbackFunction) ();
+        RegisterRuntimeInitializeAndCleanup(CallbackFunction Initialize, CallbackFunction Cleanup, int order = 0);
+
+        static void ExecuteInitializations();
+        static void ExecuteCleanup();
+    };
+} /* namespace vm */
+} /* namespace utils */

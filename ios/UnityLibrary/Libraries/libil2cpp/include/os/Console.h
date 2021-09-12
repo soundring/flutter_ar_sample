@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b6d22c72cd05bc64782740f7c453278bd47e4a9ff2cdb4af94e7020974718ca7
-size 386
+#pragma once
+
+#include <string>
+#include <stdint.h>
+
+namespace il2cpp
+{
+namespace os
+{
+namespace Console
+{
+// Isatty is in File class
+    int32_t InternalKeyAvailable(int32_t ms_timeout);
+    bool SetBreak(bool wantBreak);
+    bool SetEcho(bool wantEcho);
+    bool TtySetup(const std::string& keypadXmit, const std::string& teardown, uint8_t* control_characters, int32_t** size);
+}
+}
+}

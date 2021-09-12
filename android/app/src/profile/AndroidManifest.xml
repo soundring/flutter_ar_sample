@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3e3329e27750ed95e2cd7f9c6bacb6e702fb873d30f72eaf3b6574a4131da9d2
-size 341
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.murasame.flutter_unity_sample">
+    <!-- Flutter needs it to communicate with the running application
+         to allow setting breakpoints, to provide hot reload, etc.
+    -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+</manifest>

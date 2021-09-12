@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:142eb69ca9a7feab51c4d4b5455978b290d58f92f581be4601607dd640bd8972
-size 742
+#pragma once
+
+#include <stddef.h>
+#include <stdint.h>
+
+typedef void* (*allocate_func)(size_t size);
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+void register_allocator(allocate_func allocator);
+
+#if defined(__cplusplus)
+}
+#endif
+
+#if defined(__cplusplus)
+#include <string>
+#include <vector>
+
+class Allocator
+{
+public:
+    static void* Allocate(size_t size);
+    static char* CopyToAllocatedStringBuffer(const std::string& input);
+    static char* CopyToAllocatedStringBuffer(const char* input);
+    static void CopyStringVectorToNullTerminatedArray(const std::vector<std::string>& input, void*** output);
+    static void CopyDataVectorToNullTerminatedArray(const std::vector<void*>& input, void*** output, int32_t elementSize);
+};
+
+#endif

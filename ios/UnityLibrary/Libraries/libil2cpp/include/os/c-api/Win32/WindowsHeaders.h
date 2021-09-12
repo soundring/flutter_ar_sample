@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:106f79e658f40f3d50182fe6449ff2d03ad50c39e4c0efc3716f8bfd9853878d
-size 508
+#pragma once
+
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN 1
+#endif
+#define INC_OLE2 1
+#include <Windows.h>
+#include <Objidl.h>
+
+#if IL2CPP_TARGET_WINDOWS_DESKTOP || IL2CPP_TARGET_WINRT
+#include <wincrypt.h>
+#include <winsock2.h>
+#include <Iphlpapi.h>
+#endif
+
+#if !IL2CPP_TARGET_WINDOWS_DESKTOP
+#include <bcrypt.h>
+#include <roapi.h>
+#include <robuffer.h>
+#include <winstring.h>
+#endif
+
+#define LINK_TO_WINDOWSRUNTIME_LIBS (!IL2CPP_TARGET_WINDOWS_DESKTOP)

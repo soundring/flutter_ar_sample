@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e7bbfb7f2a76bac9681dd1858d05f503aea6f8911f1a8bd16f50181d9cf2d387
-size 662
+#pragma once
+
+#include "os/c-api/Error-c-api.h"
+
+#if defined(__cplusplus)
+#include "os/ThreadLocalValue.h"
+typedef il2cpp::os::ThreadLocalValue UnityPalThreadLocalValue;
+
+#else
+
+typedef struct UnityPalThreadLocalValue UnityPalThreadLocalValue;
+
+#endif
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+UnityPalThreadLocalValue* UnityPalThreadLocalValueNew();
+void UnityPalThreadLocalValueDelete(UnityPalThreadLocalValue* object);
+
+UnityPalErrorCode UnityPalThreadLocalValueSetValue(UnityPalThreadLocalValue* object, void* value);
+UnityPalErrorCode UnityPalThreadLocalValueGetValue(UnityPalThreadLocalValue* object, void** value);
+
+#if defined(__cplusplus)
+}
+#endif

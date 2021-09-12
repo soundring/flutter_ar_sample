@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:094124bb21257f9f577be499ae0ba1ac7773fd627fac3851b92c01cf27c1a090
-size 211
+#pragma once
+
+namespace il2cpp
+{
+namespace os
+{
+namespace Image
+{
+    void Initialize();
+    void* GetImageBase();
+#if IL2CPP_PLATFORM_SUPPORTS_CUSTOM_SECTIONS
+    bool IsInManagedSection(void*ip);
+#endif
+}
+}
+}

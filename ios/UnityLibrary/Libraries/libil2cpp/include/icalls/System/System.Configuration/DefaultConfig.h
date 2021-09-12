@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b9414fd7a5dc782826c0e8c13e6477a5b458ff778691ba0ba0ecb74173c18818
-size 803
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-object-internals.h"
+#include "il2cpp-config.h"
+
+struct Il2CppObject;
+struct Il2CppDelegate;
+struct Il2CppReflectionType;
+struct Il2CppReflectionMethod;
+struct Il2CppReflectionField;
+struct Il2CppArray;
+struct Il2CppException;
+struct Il2CppReflectionModule;
+struct Il2CppAssembly;
+struct Il2CppAssemblyName;
+struct Il2CppAppDomain;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace System
+{
+namespace System
+{
+namespace Configuration
+{
+    class LIBIL2CPP_CODEGEN_API DefaultConfig
+    {
+    public:
+        static Il2CppString* get_machine_config_path();
+        static Il2CppString* get_bundled_machine_config();
+    };
+} /* namespace Configuration */
+} /* namespace System */
+} /* namespace System */
+} /* namespace icalls */
+} /* namespace il2cpp */

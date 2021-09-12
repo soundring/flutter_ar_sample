@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f7d35a9310295a6b8808d7c86fc4a29d23a52d72908ffbeb3934d1452d150ae
-size 716
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-object-internals.h"
+#include "il2cpp-config.h"
+
+struct Il2CppObject;
+struct Il2CppDelegate;
+struct Il2CppReflectionType;
+struct Il2CppReflectionMethod;
+struct Il2CppReflectionField;
+struct Il2CppArray;
+struct Il2CppException;
+struct Il2CppReflectionModule;
+struct Il2CppAssembly;
+struct Il2CppAssemblyName;
+struct Il2CppAppDomain;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace System
+{
+namespace System
+{
+namespace IO
+{
+    class LIBIL2CPP_CODEGEN_API FileSystemWatcher
+    {
+    public:
+        static int32_t InternalSupportsFSW();
+    };
+} /* namespace IO */
+} /* namespace System */
+} /* namespace System */
+} /* namespace icalls */
+} /* namespace il2cpp */

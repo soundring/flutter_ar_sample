@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c0d18f82aef8f2b891ec4f75fd5b2b9c1a70205156ceb2767e0e3a50f2a3f218
-size 440
+#pragma once
+
+#include "il2cpp-object-internals.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+    class LIBIL2CPP_CODEGEN_API Number
+    {
+    public:
+        static bool NumberBufferToDecimal(uint8_t* number, Il2CppDecimal* value);
+        static bool NumberBufferToDouble(uint8_t* number, double* value);
+    };
+} // namespace System
+} // namespace mscorlib
+} // namespace icalls
+} // namespace il2cpp

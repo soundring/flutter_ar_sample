@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:194f259621af3be35e520499f4dba5f5bd4151630181dc8f13b43b338c053745
-size 713
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+
+struct Il2CppString;
+struct Il2CppReflectionMethod;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Diagnostics
+{
+    class LIBIL2CPP_CODEGEN_API StackFrame
+    {
+    public:
+        static bool get_frame_info(
+            int32_t skip,
+            bool needFileInfo,
+            Il2CppReflectionMethod ** method,
+            int32_t* iloffset,
+            int32_t* native_offset,
+            Il2CppString** file,
+            int32_t* line,
+            int32_t* column);
+    };
+} /* namespace Diagnostics */
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:87a8321dd9fe1977248202ac884dce604ff5c805df2f91ddd674a05630a27870
-size 203
+#pragma once
+#include "il2cpp-config.h"
+
+#ifdef __cplusplus
+
+#include <string>
+
+typedef std::basic_string<Il2CppChar> UTF16String;
+typedef std::basic_string<Il2CppNativeChar> Il2CppNativeString;
+
+#endif

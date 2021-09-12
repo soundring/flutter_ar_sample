@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:770cd93a332515290ebe643561ea79a8a3853d115cc1d92faf511c7339c78ef5
-size 431
+#pragma once
+#include "il2cpp-object-internals.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Reflection
+{
+    class LIBIL2CPP_CODEGEN_API RtFieldInfo
+    {
+    public:
+        static Il2CppObject* UnsafeGetValue(Il2CppReflectionField* _this, Il2CppObject* obj);
+    };
+} // namespace Reflection
+} // namespace System
+} // namespace mscorlib
+} // namespace icalls
+} // namespace il2cpp

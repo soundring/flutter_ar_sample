@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:862013fc26287df0222b92e2f7000918104022dd2bfb45bc6da482517eccce62
-size 502
+#pragma once
+
+#include "utils/dynamic_array.h"
+
+struct Il2CppType;
+
+namespace il2cpp
+{
+namespace metadata
+{
+    struct Il2CppSignatureCompare
+    {
+        bool operator()(const il2cpp::utils::dynamic_array<const Il2CppType*>& s1, const il2cpp::utils::dynamic_array<const Il2CppType*>& s2) const;
+        static bool Equals(const il2cpp::utils::dynamic_array<const Il2CppType*>& s1, const il2cpp::utils::dynamic_array<const Il2CppType*>& s2);
+    };
+} /* namespace metadata */
+} /* namespace il2cpp */

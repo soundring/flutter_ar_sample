@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5ec76d475304d3bc664b27868c34897d99a4cc05e5bcc3b6253325125604408f
-size 311
+#pragma once
+
+// Use this attribute to disable the thread sanitizer checks for a specific method.
+
+#if defined(__has_feature)
+#if __has_feature(thread_sanitizer)
+#define IL2CPP_DISABLE_TSAN __attribute__((no_sanitize("thread")))
+#else
+#define IL2CPP_DISABLE_TSAN
+#endif
+#else
+#define IL2CPP_DISABLE_TSAN
+#endif

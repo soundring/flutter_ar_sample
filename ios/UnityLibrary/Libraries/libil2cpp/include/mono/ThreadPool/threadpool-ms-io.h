@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:368828a1c9c9d4838440a6df6ae439a4812b80e5a3646118028a99f6101f84bc
-size 444
+#pragma once
+
+#include "il2cpp-config.h"
+#include "il2cpp-object-internals.h"
+
+struct Il2CppIOSelectorJob;
+
+void threadpool_ms_io_remove_socket(int fd);
+//void mono_threadpool_ms_io_remove_domain_jobs (MonoDomain *domain);
+void threadpool_ms_io_cleanup(void);
+
+LIBIL2CPP_CODEGEN_API void ves_icall_System_IOSelector_Add(intptr_t handle, Il2CppIOSelectorJob *job);
+LIBIL2CPP_CODEGEN_API void ves_icall_System_IOSelector_Remove(intptr_t handle);

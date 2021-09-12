@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5bd6b9e4ddb2e2fbfa320f4bc2ebb54d38b083bccd0236692ca1980bbd776898
-size 583
+#pragma once
+
+#if defined(__cplusplus)
+#include "os/LibraryLoader.h"
+typedef Il2CppMethodPointer UnityPalMethodPointer;
+#else
+typedef void (*UnityPalMethodPointer)();
+#endif
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+void* UnityPalLibraryLoaderLoadDynamicLibrary(const char* nativeDynamicLibrary, int flags);
+void UnityPalLibraryLoaderCleanupLoadedLibraries();
+UnityPalMethodPointer UnityPalLibraryLoaderGetFunctionPointer(void* dynamicLibrary, const char* functionName);
+int32_t UnityPalLibraryLoaderCloseLoadedLibrary(void** dynamicLibrary);
+
+#if defined(__cplusplus)
+}
+#endif

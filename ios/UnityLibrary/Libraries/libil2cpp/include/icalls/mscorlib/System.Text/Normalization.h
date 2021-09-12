@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:28a2bb51c08ca5d9161d1c2b561738daf119142ac9b8db7e4e802494c93ab333
-size 518
+#pragma once
+#include "il2cpp-object-internals.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Text
+{
+    class LIBIL2CPP_CODEGEN_API Normalization
+    {
+    public:
+        static void load_normalization_resource(intptr_t* props, intptr_t* mappedChars, intptr_t* charMapIndex, intptr_t* helperIndex, intptr_t* mapIdxToComposite, intptr_t* combiningClass);
+    };
+} // namespace Text
+} // namespace System
+} // namespace mscorlib
+} // namespace icalls
+} // namespace il2cpp

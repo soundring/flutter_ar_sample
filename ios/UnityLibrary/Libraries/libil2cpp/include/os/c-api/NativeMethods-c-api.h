@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b3d3eb109739cfc94f5f913cb3bf812ee06664e13497264f41cacda139a6ddca
-size 414
+#pragma once
+
+#include <stdint.h>
+#include "os/c-api/Process_c_api.h"
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+int32_t UnityPalNativeCloseProcess(UnityPalProcessHandle* handle);
+int32_t UnityPalNativeGetExitCodeProcess(UnityPalProcessHandle* handle, int32_t* exitCode);
+int32_t UnityPalNativeGetCurrentProcessId();
+UnityPalProcessHandle* UnityPalNativeGetCurrentProcess();
+
+#if defined(__cplusplus)
+}
+#endif

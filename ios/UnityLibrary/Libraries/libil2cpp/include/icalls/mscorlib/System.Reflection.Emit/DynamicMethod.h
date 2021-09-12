@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4c1507bb465b7a96ad88956e880653d97eae9131989db79a2f35a7c074a3d85
-size 638
+#pragma once
+
+#include "il2cpp-config.h"
+struct Il2CppReflectionDynamicMethod;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Reflection
+{
+namespace Emit
+{
+    class LIBIL2CPP_CODEGEN_API DynamicMethod
+    {
+    public:
+        static void create_dynamic_method(Il2CppReflectionDynamicMethod*, Il2CppReflectionDynamicMethod*);
+        static void destroy_dynamic_method(Il2CppReflectionDynamicMethod*, Il2CppReflectionDynamicMethod*);
+    };
+} /* namespace Emit */
+} /* namespace Reflection */
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

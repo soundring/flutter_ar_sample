@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:70d6f41123910f38d8a5ba56194969b289e757401ae1207659c3eee46559aab2
-size 371
+#pragma once
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Threading
+{
+    class LIBIL2CPP_CODEGEN_API OSSpecificSynchronizationContext
+    {
+    public:
+        static Il2CppObject* GetOSContext();
+        static void PostInternal(Il2CppObject* context, SynchronizationContextCallback callback, intptr_t arg);
+    };
+}
+}
+}
+}
+}

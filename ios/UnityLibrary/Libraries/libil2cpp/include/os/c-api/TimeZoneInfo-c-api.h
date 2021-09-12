@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d698346cbaf385a3c7bae5d8df4818de82ebfd583488c8091fa8bcab889098e
-size 496
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config-platforms.h"
+#include "il2cpp-config-api-platforms.h"
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+IL2CPP_EXPORT int UseUnityPalForTimeZoneInformation();
+IL2CPP_EXPORT void* UnityPalTimeZoneInfoGetTimeZoneIDs();
+IL2CPP_EXPORT int UnityPalGetLocalTimeZoneData(void** nativeRawData, char** nativeID, int* size);
+IL2CPP_EXPORT int UnityPalGetTimeZoneDataForID(char* id, void** nativeRawData, int* size);
+
+#if defined(__cplusplus)
+}
+#endif

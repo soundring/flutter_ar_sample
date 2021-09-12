@@ -1,3 +1,64 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a209f89f3402d3c938a541ea53a1bc6bf60bdc07bdd76f5d96dc2511f503ac40
-size 1124
+#pragma once
+
+#if IL2CPP_THREADS_WIN32
+
+#include "os/ErrorCodes.h"
+#include "os/WaitStatus.h"
+#include "utils/NonCopyable.h"
+
+#include "WindowsHeaders.h"
+
+namespace il2cpp
+{
+namespace os
+{
+    class MutexImpl : public il2cpp::utils::NonCopyable
+    {
+    public:
+        MutexImpl();
+        ~MutexImpl();
+
+        void Lock(bool interruptible);
+        bool TryLock(uint32_t milliseconds, bool interruptible);
+        void Unlock();
+        void* GetOSHandle();
+
+    private:
+        HANDLE m_MutexHandle;
+    };
+
+    class FastMutexImpl
+    {
+    public:
+        FastMutexImpl()
+        {
+            InitializeCriticalSection(&m_CritialSection);
+        }
+
+        ~FastMutexImpl()
+        {
+            DeleteCriticalSection(&m_CritialSection);
+        }
+
+        void Lock()
+        {
+            EnterCriticalSection(&m_CritialSection);
+        }
+
+        void Unlock()
+        {
+            LeaveCriticalSection(&m_CritialSection);
+        }
+
+        CRITICAL_SECTION* GetOSHandle()
+        {
+            return &m_CritialSection;
+        }
+
+    private:
+        CRITICAL_SECTION m_CritialSection;
+    };
+}
+}
+
+#endif

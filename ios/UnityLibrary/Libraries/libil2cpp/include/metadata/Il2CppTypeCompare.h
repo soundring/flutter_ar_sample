@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7cb5439109ec2fa7ce92de83b5f17790f495e7726679dbefe6c52cb1d53f10a5
-size 516
+#pragma once
+
+#include "utils/KeyWrapper.h"
+
+struct Il2CppType;
+
+namespace il2cpp
+{
+namespace metadata
+{
+    class Il2CppTypeEqualityComparer
+    {
+    public:
+        bool operator()(const Il2CppType* t1, const Il2CppType* t2) const { return AreEqual(t1, t2); }
+        static bool AreEqual(const Il2CppType* t1, const Il2CppType* t2);
+    };
+
+    class Il2CppTypeLess
+    {
+    public:
+        bool operator()(const Il2CppType* t1, const Il2CppType* t2) const;
+    };
+} /* namespace vm */
+} /* namespace il2cpp */

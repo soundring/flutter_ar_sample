@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:854cfa9c4674a95f2d1fbe52b5a42d55a7f3be45679eee62082c7b28fd4aecfa
-size 482
+#pragma once
+#include "il2cpp-config.h"
+
+struct Il2CppString;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace Mono
+{
+    class LIBIL2CPP_CODEGEN_API Runtime
+    {
+    public:
+        static void mono_runtime_install_handlers();
+        static Il2CppString* GetDisplayName();
+        static Il2CppString* GetNativeStackTrace(Il2CppException* exception);
+    };
+} /* namespace Mono */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

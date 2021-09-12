@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d58b5462e53a21f7ded771305c25b47ed33e265827e54209c43aa2c3f709ccf
-size 376
+#pragma once
+#include "il2cpp-config.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace Mono
+{
+namespace Unity
+{
+    class LIBIL2CPP_CODEGEN_API UnityTls
+    {
+    public:
+        static const void* GetUnityTlsInterface();
+    };
+} /* namespace Unity */
+} /* namespace Mono */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

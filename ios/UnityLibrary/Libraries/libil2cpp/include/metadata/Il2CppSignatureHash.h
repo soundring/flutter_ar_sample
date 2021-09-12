@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:54d6e13e6ef9f5d109e04065ca0e02f6097ac69b71e55dfee33879290ce05deb
-size 409
+#pragma once
+
+#include "utils/dynamic_array.h"
+
+struct Il2CppType;
+
+namespace il2cpp
+{
+namespace metadata
+{
+    struct Il2CppSignatureHash
+    {
+    public:
+        size_t operator()(const il2cpp::utils::dynamic_array<const Il2CppType*>& signature) const;
+        static size_t Hash(const il2cpp::utils::dynamic_array<const Il2CppType*>& signature);
+    };
+} /* namespace metadata */
+} /* namespace il2cpp */

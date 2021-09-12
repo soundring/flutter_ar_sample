@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7b5135009257f260aaff1455111d049b8715732d24ee589b318c5a2607f27a65
-size 307
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+
+struct Il2CppImage;
+
+namespace il2cpp
+{
+namespace vm
+{
+    class LIBIL2CPP_CODEGEN_API Module
+    {
+    public:
+        // exported
+        static uint32_t GetToken(const Il2CppImage *image);
+    };
+} /* namespace vm */
+} /* namespace il2cpp */

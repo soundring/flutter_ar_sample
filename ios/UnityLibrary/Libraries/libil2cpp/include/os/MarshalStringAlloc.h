@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1effdce2a9136438db4dc7d275977d56cd0d3555d9de09c820be5aaad4e93166
-size 415
+#pragma once
+
+namespace il2cpp
+{
+namespace os
+{
+    class MarshalStringAlloc
+    {
+    public:
+        static il2cpp_hresult_t AllocateBStringLength(const Il2CppChar* text, int32_t length, Il2CppChar** bstr);
+        static il2cpp_hresult_t GetBStringLength(const Il2CppChar* bstr, int32_t* length);
+        static il2cpp_hresult_t FreeBString(Il2CppChar* bstr);
+    };
+} /* namespace os */
+} /* namespace il2cpp*/

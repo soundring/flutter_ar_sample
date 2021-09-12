@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e27cdf80c62637a24d8004addf7f44cd0c4dced9b4c8a626a57e66c0124b9154
-size 783
+#pragma once
+
+#include "il2cpp-config.h"
+#include "il2cpp-object-internals.h"
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Reflection
+{
+    class LIBIL2CPP_CODEGEN_API MethodBase
+    {
+    public:
+        static Il2CppReflectionMethod* GetCurrentMethod();
+        static void* /* System.Reflection.MethodBody */ GetMethodBodyInternal(intptr_t handle);
+        static Il2CppReflectionMethod* GetMethodFromHandleInternalType(intptr_t method, intptr_t type);
+
+        static Il2CppReflectionMethod* GetMethodFromHandleInternalType_native(intptr_t method_handle, intptr_t type_handle, bool genericCheck);
+    };
+} /* namespace Reflection */
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

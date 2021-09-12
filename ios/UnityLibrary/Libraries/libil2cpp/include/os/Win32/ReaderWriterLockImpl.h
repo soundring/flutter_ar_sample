@@ -1,3 +1,51 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a24c0b941025b68ea615bfd2e57818c58b406d92c9ec4511c8ff4c517fbb5131
-size 760
+#pragma once
+
+#if IL2CPP_THREADS_WIN32
+
+#include "WindowsHeaders.h"
+
+namespace il2cpp
+{
+namespace os
+{
+    class ReaderWriterLockImpl
+    {
+    public:
+
+        ReaderWriterLockImpl()
+        {
+            InitializeSRWLock(&m_Lock);
+        }
+
+        void LockExclusive()
+        {
+            AcquireSRWLockExclusive(&m_Lock);
+        }
+
+        void LockShared()
+        {
+            AcquireSRWLockShared(&m_Lock);
+        }
+
+        void ReleaseExclusive()
+        {
+            ReleaseSRWLockExclusive(&m_Lock);
+        }
+
+        void ReleaseShared()
+        {
+            ReleaseSRWLockShared(&m_Lock);
+        }
+
+        PSRWLOCK GetOSHandle()
+        {
+            return &m_Lock;
+        }
+
+    private:
+        SRWLOCK  m_Lock;
+    };
+}
+}
+
+#endif

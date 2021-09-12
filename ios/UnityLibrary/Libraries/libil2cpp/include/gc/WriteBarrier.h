@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:46221495884704c063cd3269e6fbddf9010f5bbbe30b167b33775510a42b4a3f
-size 202
+#pragma once
+
+struct Il2CppObject;
+
+namespace il2cpp
+{
+namespace gc
+{
+    class WriteBarrier
+    {
+    public:
+        static void GenericStore(void* ptr, void* value);
+    };
+} /* gc */
+} /* il2cpp */

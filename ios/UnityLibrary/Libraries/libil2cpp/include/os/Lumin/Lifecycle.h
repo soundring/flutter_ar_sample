@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b5b1d0190f9028412158d372a3a317fae0c20659f5cb9f51511dd28fdbd99fcf
-size 210
+#pragma once
+
+#include <string>
+
+namespace il2cpp
+{
+namespace os
+{
+namespace lumin
+{
+    extern std::string GetPackageName();
+    extern std::string GetPackageTempPath();
+    extern void LifecycleInit();
+}
+}
+}

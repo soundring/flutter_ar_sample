@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f5a547cc894f2bacaa5106b569289b88196b07d3d7f685bc23e36da3ca88d64d
-size 354
+#pragma once
+
+#include "il2cpp-config.h"
+
+namespace il2cpp
+{
+namespace vm
+{
+    class LIBIL2CPP_CODEGEN_API InternalCalls
+    {
+    public:
+        static void Init();
+        static void Add(const char* name, Il2CppMethodPointer method);
+        static Il2CppMethodPointer Resolve(const char* name);
+    };
+} /* namespace vm */
+} /* namespace il2cpp */

@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:594a8ae0cebd8acbeaff5d23e3f6724bc4974fdd82b621fb57ea87636e20ff2d
-size 845
+#pragma once
+
+#include <stdint.h>
+#include "Mutex-c-api.h"
+
+#if defined(__cplusplus)
+#include "os/ConditionVariable.h"
+typedef il2cpp::os::ConditionVariable UnityPalConditionVariable;
+#else
+typedef struct UnityPalConditionVariable UnityPalConditionVariable;
+#endif
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+UnityPalConditionVariable* UnityPalConditionVariableNew();
+void UnityPalConditionVariableDelete(UnityPalConditionVariable* object);
+
+int UnityPalConditionVariableWait(UnityPalConditionVariable* object, UnityPalFastMutex* lock);
+int UnityPalConditionVariableTimedWait(UnityPalConditionVariable* object, UnityPalFastMutex* lock, uint32_t timeout_ms);
+void UnityPalConditionVariableBroadcast(UnityPalConditionVariable* object);
+void UnityPalConditionVariableSignal(UnityPalConditionVariable* object);
+
+#if defined(__cplusplus)
+}
+#endif

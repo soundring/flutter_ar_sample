@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:28f693e6d3f187b6b9d68c5735ed8c90144621f214a393c265bdd4b9cedfef1d
-size 358
+#pragma once
+#include <stdint.h>
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+void* UnityPalSystemCertificatesOpenSystemRootStore();
+int UnityPalSystemCertificatesEnumSystemCertificates(void* certStore, void** iter, int *format, int* size, void** data);
+void UnityPalSystemCertificatesCloseSystemRootStore(void* cStore);
+
+#if defined(__cplusplus)
+}
+#endif

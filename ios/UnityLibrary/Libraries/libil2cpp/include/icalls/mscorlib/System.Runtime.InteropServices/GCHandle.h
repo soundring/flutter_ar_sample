@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3125f23a230db3574b143696dfd59e94faf49b37aa6c752905e9d4fd62af8a22
-size 789
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+#include "il2cpp-object-internals.h"
+
+struct Il2CppObject;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Runtime
+{
+namespace InteropServices
+{
+    class LIBIL2CPP_CODEGEN_API GCHandle
+    {
+    public:
+        static bool CheckCurrentDomain(int32_t handle);
+        static void FreeHandle(int32_t handle);
+        static intptr_t GetAddrOfPinnedObject(int32_t handle);
+        static Il2CppObject * GetTarget(int32_t handle);
+        static int32_t GetTargetHandle(Il2CppObject * obj, int32_t handle, int32_t type);
+    };
+} /* namespace InteropServices */
+} /* namespace Runtime */
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

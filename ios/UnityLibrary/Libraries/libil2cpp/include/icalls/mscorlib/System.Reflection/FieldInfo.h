@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:beefeb5d3156048af3054769f416027206edffac863864bcc0e8882946f83c99
-size 801
+#pragma once
+
+#include "il2cpp-object-internals.h"
+#include "il2cpp-config.h"
+
+struct Il2CppReflectionField;
+struct Il2CppReflectionMarshal;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Reflection
+{
+    class LIBIL2CPP_CODEGEN_API FieldInfo
+    {
+    public:
+        static Il2CppReflectionMarshal* GetUnmanagedMarshal(Il2CppReflectionField* field);
+        static Il2CppReflectionField* internal_from_handle_type(intptr_t field_handle, intptr_t type_handle);
+        static Il2CppArray* GetTypeModifiers(Il2CppReflectionField* field, bool optional);
+        static Il2CppObject* get_marshal_info(Il2CppObject* _this);
+    };
+} /* namespace Reflection */
+} /* namespace System */
+} /* namespace mscorlib */
+} /* namespace icalls */
+} /* namespace il2cpp */

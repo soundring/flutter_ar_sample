@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9cefab5e6a6f6a5b570106086a2fa8b0205b993144147bc2f358ed34676ae8c
-size 528
+#pragma once
+
+#include "UnityForwardDecls.h"
+#include "UnityAppController.h"
+#include "UnityRendering.h"
+
+@interface UnityAppController (Rendering)
+
+- (void)createDisplayLink;
+- (void)repaintDisplayLink;
+- (void)destroyDisplayLink;
+
+- (void)repaint;
+
+- (void)selectRenderingAPI;
+@property (readonly, nonatomic) UnityRenderingAPI   renderingAPI;
+
+@end
+
+// helper to run unity loop along with proper handling of the rendering
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void UnityRepaint();
+
+#ifdef __cplusplus
+} // extern "C"
+#endif

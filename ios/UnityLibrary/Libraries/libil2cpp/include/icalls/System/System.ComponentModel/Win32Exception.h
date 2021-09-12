@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:44ef77960b7c9c0cd4164a066a14f483452a4d4fe5f0db1dd10901f5a7052963
-size 452
+#pragma once
+
+#include <stdint.h>
+#include "il2cpp-config.h"
+
+struct Il2CppString;
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace System
+{
+namespace System
+{
+namespace ComponentModel
+{
+    class LIBIL2CPP_CODEGEN_API Win32Exception
+    {
+    public:
+        static Il2CppString *W32ErrorMessage(int32_t code);
+    };
+} /* namespace ComponentModel */
+} /* namespace System */
+} /* namespace System */
+} /* namespace icalls */
+} /* namespace il2cpp */

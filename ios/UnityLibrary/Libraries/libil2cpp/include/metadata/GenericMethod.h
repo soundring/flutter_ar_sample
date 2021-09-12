@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:688de0a984b19876eb523e71d5c29bbdc784bce230b097b0a16d5a00cca7657e
-size 572
+#pragma once
+
+#include <string>
+
+struct MethodInfo;
+struct Il2CppGenericMethod;
+struct Il2CppGenericContext;
+
+namespace il2cpp
+{
+namespace metadata
+{
+    class GenericMethod
+    {
+    public:
+        // exported
+
+    public:
+        //internal
+        static const MethodInfo* GetMethod(const Il2CppGenericMethod* gmethod, bool copyMethodPtr = false);
+        static const Il2CppGenericContext* GetContext(const Il2CppGenericMethod* gmethod);
+        static std::string GetFullName(const Il2CppGenericMethod* gmethod);
+    };
+} /* namespace vm */
+} /* namespace il2cpp */

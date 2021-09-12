@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1c103a0ddc8cda4ab984e12dc485a5efc68a4a74ecfe68a8842ed1fdc8577fe9
-size 310
+#pragma once
+
+#include <stdint.h>
+
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
+uint32_t UnityPalGetTicksMillisecondsMonotonic();
+int64_t UnityPalGetTicks100NanosecondsMonotonic();
+int64_t UnityPalGetTicks100NanosecondsDateTime();
+int64_t UnityPalGetSystemTimeAsFileTime();
+
+#if defined(__cplusplus)
+}
+#endif

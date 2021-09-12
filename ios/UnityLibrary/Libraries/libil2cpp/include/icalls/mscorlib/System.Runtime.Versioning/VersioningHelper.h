@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21a1bafd50c314d878a7fc1a6c0c841dcd4c280b0a0e2c80bdb14d810732ba0d
-size 387
+#pragma once
+
+namespace il2cpp
+{
+namespace icalls
+{
+namespace mscorlib
+{
+namespace System
+{
+namespace Runtime
+{
+namespace Versioning
+{
+    class LIBIL2CPP_CODEGEN_API VersioningHelper
+    {
+    public:
+        static int32_t GetRuntimeId();
+    };
+} // namespace Versioning
+} // namespace Runtime
+} // namespace System
+} // namespace mscorlib
+} // namespace icalls
+} // namespace il2cpp
